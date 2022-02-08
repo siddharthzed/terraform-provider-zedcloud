@@ -36,6 +36,54 @@ func getEdgeApp(client *zedcloudapi.Client,
 	return rspData, nil
 }
 
+func flattenAppResources(cfg []*swagger_models.Resource) []interface{} {
+}
+
+func flattenAppPermission(cfg []*swagger_models.Permission) []interface{} {
+}
+
+func flattenAppModule(cfg *swagger_models.ModuleDetail) []interface{} {
+}
+
+func flattenAppInterfaces(cfg *swagger_models.Interface) []interface{} {
+}
+
+func flattenAppImages(cfg *swagger_models.VMManifestImage) []interface{} {
+}
+
+func flattenDescDetails(cfg *swagger_models.Details) []interface{} {
+}
+
+func flattenContainerDetail(cfg *swagger_models.ContainerDetail) []interface{} {
+}
+
+func flattenUserDataTemplate(cfg *swagger_models.UserDataTemplate) []interface{} {
+}
+
+func flattenVmManifest(cfg *swagger_models.VMManifest) []interface{} {
+    if cfg == nil {
+        return []interface{}{}
+    }
+    return []interface{}{map[string]interface{}{
+        "apptype" : ptrValStr(cfg.AppType),
+        "configuration" : flattenUserDataTemplate(cfg.Configuration),
+        "container_detail" : flattenContainerDetailTemplate(cfg.ContainerDetail).
+        "deployment_type" : ptrValStr(cfg.DeploymentType),
+        "desc_details" : flattenDescDetails(cfg.Desc),
+        "description" : cfg.Description,
+        "display_name" : cfg.DisplayName,
+        "enablevnc" : cfg.Enablevnc,
+        "images" : flattenAppImages(cfg.Images),
+        "interfaces" : flattenAppInterfaces(cfg.Interfaces),
+        "module" : flattenAppModule(cfg.Module),
+        "name" : cfg.Name,
+        "owner" : flattenAppAuthor(cfg.Owner),
+        "permissions" : flattenAppPermission(cfg.Permissions),
+        "resources" : flattenAppResources(cfg.Resources),
+        "vmmode" : ptrValStr(cfg.Vmmode),
+    }
+}
+
 func flattenEdgeAppConfig(cfg *swagger_models.App, computedOnly bool) map[string]interface{} {
 	data := map[string]interface{}{
 		"id":            cfg.ID,
@@ -49,6 +97,7 @@ func flattenEdgeAppConfig(cfg *swagger_models.App, computedOnly bool) map[string
 		data["description"] = cfg.Description
 		data["cpus"] = int(cfg.Cpus)
 		data["drives"] = int(cfg.Drives)
+		data["manifest"] = flattenVmManifest(cfg.ManifestJSON)
 		data["memory"] = int(cfg.Memory)
 		data["networks"] = int(cfg.Networks)
 		data["storage"] = int(cfg.Storage)
