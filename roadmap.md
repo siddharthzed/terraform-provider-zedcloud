@@ -26,9 +26,9 @@ In this case, a notification will be sent to the slack channel and PM can update
 - __M4: 02/07/2023 - 02/14/2023 - Support__
     - Help customers/engineers porting their existing configurations to the new simplified schemas.
 	- Assist in real-time (Keybase, email, slack/support channels) and keep time slots free for addressing issues and bug-fixes immediately.
-- __M5 - 21/02/2023 - Release__
+- __M5 - 02/21/2023 - Release__
     - Full support for all API resources.
-- __M6 - 28/02/2023 - Test__
+- __M6 - 02/28/2023 - Test__
 	- CI/CD run tests  in GitHub actions against staging environment.
 	- Add links to the documentation to the Zededa Help Center articles
 
