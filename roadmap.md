@@ -16,7 +16,7 @@ In this case, a notification will be sent to the slack channel and PM can update
 
 - __M1: 02/01/2023 - Release of v2__
     - This replaces the current version v1 and provides the same feature set with several improvements and fixes as well as full test coverage against a Zedcloud instance.
-- __M2: 02/01-02/07/2023 - Test and release__
+- __M2: 02/01 - 02/07/2023 - Test and release__
     - Beta testing with PM internally before releasing to customers.
 	- Support for automatic retries with exponential back-off
 - __M3: 02/07/2023 - Release__
