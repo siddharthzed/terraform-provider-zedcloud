@@ -23,7 +23,7 @@ In this case, a notification will be sent to the slack channel and PM can update
 	- Fixes for issues that came up in beta.
 	- Indicate failure in app-image deletion + creation for high volume workloads (this issue is on API side, a fix is unlikely currently but it is on the agenda of the Zedcloud team).
     - Fix for network instance deletion errors.
-- __M4: 02/07/2023 - Support__
+- __M4: 02/07/2023 - 02/14/2023 - Support__
     - Help customers/engineers porting their existing configurations to the new simplified schemas.
 	- Assist in real-time (Keybase, email, slack/support channels) and keep time slots free for addressing issues and bug-fixes immediately.
 - __M5 - 21/02/2023 - Release__
